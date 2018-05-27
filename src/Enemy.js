@@ -6,9 +6,6 @@ export default class Enemy {
 		this.y = this.positions[Math.floor(Math.random()*this.positions.length)];
 		this.speed = Math.floor(Math.random() * (400 - 250) + 250);
 		this.sprite = 'images/enemy-bug.png';
-		this.collision = {
-			x: {}, y: {}
-		};
 	}
 	
 	update(dt) {

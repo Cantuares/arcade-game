@@ -4,9 +4,6 @@ export default class Player {
 		this.x = 2;
 		this.y = 5;
 		this.sprite = 'images/char-boy.png';
-		this.collision = {
-			x: {}, y: {}
-		};
 		this.star = false;
 		this.dead = false;
 		this.score = 0;

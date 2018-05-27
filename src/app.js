@@ -14,6 +14,6 @@ document.addEventListener('keyup', (e) => {
 
 (function startGame(global) {
 	global.player = new Player();
-	global.allEnemies = [new Enemy, new Enemy, new Enemy, new Enemy];
-	global.star = new Star;
+	global.allEnemies = [new Enemy(), new Enemy(), new Enemy(), new Enemy()];
+	global.star = new Star();
 })(window);
