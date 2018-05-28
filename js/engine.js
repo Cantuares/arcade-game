@@ -80,29 +80,43 @@ var Engine = (function(global) {
     function update(dt) {
         updateEntities(dt);
         checkCollisions();
+		checkStarCollision();
 		hasWon();
     }
 	
 	function checkCollisions() {
-		// enemies collision
+		/**
+		 * Enemy collision
+		 * Ex: enemy.x = 1, (101 - 97) = 4 and 4/2 = 2.
+		 * Ex: player.x = 1 * 101 = 101, (101-66) = 35, 35/2 = 17.5
+		 * ex: 1 + 2 >=	101 + 17.5 && .... to calculate collision area between
+		 * enemy and player.
+		 */
   		allEnemies.forEach(function(enemy) {
   		  if (((enemy.x + (101 - 97) / 2) + 97) >= ((player.x * 101) + ((101 - 66) / 2)) && 
 			   (enemy.x + (101 - 97) / 2) <= ((player.x * 101) + ((101 - 66) / 2) + 66) &&
-			 enemy.y == player.y) {
-				player.dead = true;
-			  	star.showStar = true;
-				reset();
+			    enemy.y == player.y) {
+			  player.dead = true;
+			  star.showStar = true;
+			  reset();
 		  }
   		});
-		
-		// stars collision
+	}
+
+	function checkStarCollision() {
   		if (((star.x * 101 + (101 - 72) / 2) + 72) >= ((player.x * 101) + ((101 - 66) / 2)) &&
-		   (star.x * 101 + (101 - 72) / 2) <= ((player.x * 101) + ((101 - 66) / 2) + 66) &&
-			star.y == player.y) {
-				getStar();
-		 }
+		     (star.x * 101 + (101 - 72) / 2) <= ((player.x * 101) + ((101 - 66) / 2) + 66) &&
+			  star.y == player.y) {
+			getStar();
+		}
 	}
 	
+	/**
+	 * check it if player has won the game.
+	 * Basically, the increment by +50 points to
+	 * player score and reset to beginning if player hasn't finished,
+	 * otherwise do nothing.
+	 */
 	function hasWon() {
 		if (player.y) {
 			return;

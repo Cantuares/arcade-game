@@ -1,6 +1,19 @@
-frontend-nanodegree-arcade-game
+Classic Arcade Game: Frogger
 ===============================
+This is a project of the nanodegree program [Udacity - Web Front-End Avançado](https://br.udacity.com/course/front-end-web-developer-nanodegree--nd001-br-advanced)
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+Getting starting
+===============================
+1. Clone this project or [download the zip files](https://github.com/Cantuares/arcade-game/archive/master.zip).
+2. Navigate to the project folder and execute **npm install** to install all dependencies.
+3. If you want to make changes in the code, please execute this code ***npm run start** to start the webpack and transpiling ES6 code to ES5.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Game Objective
+===============================
+1. Walk through enemies (bug) and reach in the water without hitting them.
+2. Pick up star that appear in the game to increase your score.
+
+How to play
+===============================
+1. Use the **up**, **down**, **left**, and **right** keys on your keyboard.
+2. [Play the game](https://cantuares.github.io/arcade-game/) and Enjoy! ;)

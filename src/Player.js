@@ -1,5 +1,5 @@
 export default class Player {
-	
+
 	constructor() {
 		this.x = 2;
 		this.y = 5;
@@ -9,12 +9,16 @@ export default class Player {
 		this.score = 0;
 	}
 	
-	update(dt) {}
-	
+	/**
+	 * render
+	 */
 	render() {
-		ctx.drawImage(Resources.get(this.sprite), this.x*101, ((this.y*83)-15), 101, 171); // -15 to fix enemy position in the middle.
+		ctx.drawImage(Resources.get(this.sprite), this.x * 101, ((this.y * 83) - 15), 101, 171); // -15 to fix player position in the middle.
 	}
 	
+	/**
+	 * control the position that player will move.
+	 */
 	handleInput(key) {
 		(key == 'up' ? 
 		 this.y - 1 < 0 ? this.y = 0 : this.y-- : this.y);
