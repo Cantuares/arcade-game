@@ -25,4 +25,4 @@ export default class Enemy {
 	render() {
 		ctx.drawImage(Resources.get(this.sprite), this.x, ((this.y * 83) - 25), 101, 171); // -25 to fix enemy position in the middle.
 	}
-}+
+}

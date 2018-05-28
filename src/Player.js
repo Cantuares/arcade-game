@@ -9,11 +9,24 @@ export default class Player {
 		this.score = 0;
 	}
 	
+	update(dt){}
+	
 	/**
 	 * render
 	 */
 	render() {
 		ctx.drawImage(Resources.get(this.sprite), this.x * 101, ((this.y * 83) - 15), 101, 171); // -15 to fix player position in the middle.
+		this.drawScore();
+	}
+	
+	/**
+	 * draw score points
+	 */
+	drawScore() {
+		ctx.beginPath();
+		ctx.font = '30px Arial';
+		ctx.fillText(`${this.score} PTS`, 0, 35);
+		ctx.closePath();
 	}
 	
 	/**
